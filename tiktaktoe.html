@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIK TAK TOE</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  
+
+</head>
+<body>
+    <div id="main" class="container text-center align-items-center">
+        <h2>TIK TAK TOE</h2>
+        <span id="turn">Let's Play! X goes first.</span>
+        <div class="row"> 
+            <div id="one" class="col dark square" onclick="gamePlay();"></div>
+            <div id="two" class="col dark square" onclick="gamePlay();"></div>
+            <div id="three" class="col dark square" onclick="gamePlay();"></div>
+        </div>
+        <div class="row"> 
+            <div id="four" class="col dark square" onclick="gamePlay();"></div>
+            <div id="five" class="col dark square" onclick="gamePlay();"></div>
+            <div id="six" class="col dark square" onclick="gamePlay();"></div>
+        </div>
+        <div class="row"> 
+            <div id="seven" class="col dark square" onclick="gamePlay();"></div>
+            <div id="eight" class="col dark square" onclick="gamePlay();"></div>
+            <div id="nine" class="col dark square" onclick="gamePlay();"></div>
+        </div>
+    </div>
+
+    <button class="btn btn-dark m-5" id="resetGame">Reset Game / Play Again</button>
+
+    <div class="modal fade bd-modal-sm" tabindex="-1" role="dialog" aria-dropeffect="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                Only Princesses get confetti!
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-dark" data-dismiss="modal">Ha!</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="styles.css"></script>
+    <script src="tiktaktoe.js"></script>
+</body>
+</html>
+<footer class="text-center"> Nicole Johnson Week 11 Coding Assignment - tiktaktoe Promineo Tech · ©2023</footer>
+              <footer class="pt-5 my-5 text-muted border-top text-center"> 
