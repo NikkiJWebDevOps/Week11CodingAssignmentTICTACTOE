@@ -1,6 +1,5 @@
-//always display game name at the top
+/*display your "Player []'s Turn:" Alternate between player 1 and 2.*/
 
-//under game name, display "Player []'s Turn:" Alternate between player 1 and 2.
 let whoseTurn = document.getElementById('turn');
 let squares = document.querySelectorAll('div.square');
 let playedSquare = 0;
@@ -8,9 +7,8 @@ let isWinner = false;
 gamePlay();
 
 
-/*
-when all spots are filled in or if one letter or the other occupies three 
-spots in a row, H,V, or D, the game is over. Declare a winner or a draw.
+/* when all boxes are filled in or if one letter or the other occupies three
+spots in a row, Horizontally, Vertically, or Diagnally, the game is now ovah! Declare winner or a draw.
 */
 function checkWin() {
     let 
@@ -24,7 +22,8 @@ function checkWin() {
     sq8 = document.getElementById('eight'),
     sq9 = document.getElementById('nine');
 
-    //horizontal top row: if first square is not empty and its contents match 2nd and 3rd square contents
+    /*top row is horizontal: if first square is not empty, and its contents match 2nd and 3rd square contents*/
+
     if (sq1.innerHTML !== '' && (sq1.innerHTML === sq2.innerHTML && sq1.innerHTML === sq3.innerHTML)) {
         winningSquares(sq1, sq2, sq3);
     } else
@@ -66,21 +65,7 @@ function winningSquares(s1, s2, s3) {
     whoseTurn.innerHTML = s1.innerHTML + ' wins! Play again.';
     $('.modal').modal('show')
 
-    fire(0.25, {
-        spread: 26, startVelocity: 55, 
-    });
-    fire(0.2, {
-        spread: 60,
-    });
-    fire(0.35, {
-        spread: 100, decay: 0.91, scalar: 0.8
-    });
-    fire(0.1, {
-        spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2
-    });
-    fire(0.1, {
-        spread: 120, startVelocity: 45,
-    });
+    
 }
 
 var count = 200;
@@ -91,10 +76,6 @@ function fire(particleRatio, opts) {
         particleCount: Math.floor(count * particleRatio)
     }));
 }
-
-//when the player clicks on a column, enter their gamepiece as innerHTML
-//could give user a selection of images to use as gamepiece and innerHTML would be the image file
-
 
 
 function gamePlay() {
