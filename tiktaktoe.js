@@ -94,16 +94,42 @@ function gamePlay() {
                         checkWin();
                         playedSquare += 1;
                     }
+                    function playSound(audioSRC) {
+                        sound.src = audioSRC;
+                        sound.preload = 'auto';
+                        sound.volume = 1.0;
+                        sound.autoplay = true;
+                        sound.loop = false;
+                      }                       
+                      function startwinner(audioSRC='sounds/winner.wav') {
+                        winner.src = audioSRC;
+                        winner.preload = 'auto';
+                        winner.volume = 1.8;
+                        winner.autoplay = true;
+                        winner.loop = true;
+                        }
+                    function starttryagain(audioSRC='sounds/try again.wav') {
+                        tryagain.src = audioSRC;
+                        tryagain.preload = 'auto';
+                        tryagain.volume = 1.8;
+                        tryagain.autoplay = true;
+                        tryagain.loop = true;
+                            }    
+  
+  
                 if (playedSquare === 9 && isWinner === false) {
-                    whoseTurn.innerHTML = 'No winner. Try again!';
-                    let audio = new Audio('.\sounds\Gameover.wav'); 
+                    whoseTurn.innerHTML = 'Not your day to win. Try again!';
+                    HTMLAudioElement=new Audio(tryagain); 
+                    playSound(audioSRC.tryagain.wav);  
                     audio.play();
+                    
                 }
                     } else {
                         if (playedSquare === 9 && isWinner === true); 
                         whoseTurn.innerHTML = 'Yay! You won!';
-                        let audio = Audio('./sounds/Winner.wav'); 
-                        audio.play();    
+                        HTMLAudioElement=Audio(winner); 
+                        playSound(audioSRC.winner.wav);  
+                        audio.play();   
                        
                         
             }
