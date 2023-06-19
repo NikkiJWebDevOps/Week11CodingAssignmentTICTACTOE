@@ -78,6 +78,7 @@ function fire(particleRatio, opts) {
 }
 
 
+
 function gamePlay() {
 
         for (let i = 0; i < squares.length; i++) {
